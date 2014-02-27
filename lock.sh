@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export TZ=UTZ+12
+export TZ=UTC+12
 H=`date +%H`
 M=$(( (`date +%M` / 15)*15 ))
 DIR=$(dirname `readlink -f $0`)
