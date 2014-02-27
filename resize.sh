@@ -1,6 +1,12 @@
 #!/bin/zsh
 
-DIM=1440x900
+if [[ $1 == '' ]]; then
+	DIM=$(xrandr | grep '*' | head -n1 | sed 's/[^0-9]*\([0-9]*x[0-9]*\).*/\1/')
+else
+	DIM=$1
+fi
+
+echo "DIM: $DIM"
 
 mkdir -p img/resized
 for i in {00..23}
